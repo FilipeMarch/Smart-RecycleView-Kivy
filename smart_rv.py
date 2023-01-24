@@ -24,7 +24,7 @@ class SmartRV(F.RecycleView):
         options=["scroll_to_top", "scroll_to_center", "scroll_to_bottom"],
     )
     horizontal_behavior = F.OptionProperty(
-        "scroll_to_left",€
+        "scroll_to_left",
         options=["scroll_to_left", "scroll_to_center", "scroll_to_right"],
     )
     scroll_duration = F.NumericProperty(1)
