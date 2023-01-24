@@ -49,3 +49,15 @@ Button:
 ```
 
 That's it! I hope it helps.
+
+If you want, you can change the SmartRV.vertical_behavior property to one of these:
+```python
+options=["scroll_to_top", "scroll_to_center", "scroll_to_bottom"]
+```
+
+Or you can change the SmartRV.horizontal_behavior property to one of these:
+```python
+options=["scroll_to_left", "scroll_to_center", "scroll_to_right"]
+```
+
+Also, you can define the duration of the animation by changing the property `scroll_duration`.
