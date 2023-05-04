@@ -1,5 +1,3 @@
-from kivy.app import App
-from kivy.lang import Builder
 from kivy.factory import Factory as F
 from kivy.animation import Animation
 
@@ -70,8 +68,12 @@ class SmartRV(F.RecycleView):
             Animation(scroll_x=scroll_x, d=self.scroll_duration).start(self)
 
 
-# fmt: off
-kv = Builder.load_string("""
+if __name__ == "__main__":
+    from kivy.app import App
+    from kivy.lang import Builder
+
+    # fmt: off
+    kv = Builder.load_string("""
 #:import random random
 #:import Animation kivy.animation.Animation
 
@@ -85,7 +87,7 @@ BoxLayout:
             color: 0,1,0,1
             on_release:
                 rv.data = [{'text': str(x)} for x in range(100)]
-                random_number = random.randint(0, 100)
+                random_number = random.randint(0, 99)
                 self.text = str(random_number)
                 rv.scroll_to_item(random_number)
                 for value in rv.data: value['color'] = [1, 1, 1, 1]
@@ -130,7 +132,7 @@ BoxLayout:
             color: 1,0,0,1
             on_release:
                 rv2.data = [{'text': str(x)} for x in range(100)]
-                random_number = random.randint(0, 100)
+                random_number = random.randint(0, 99)
                 self.text = str(random_number)
                 rv2.scroll_to_item(random_number)
                 for value in rv2.data: value['color'] = [1, 1, 1, 1]
@@ -168,15 +170,11 @@ BoxLayout:
             size_hint_x: None
             width: self.minimum_width
             orientation: 'horizontal'
+""")
+    # fmt: on
 
-"""
-)
-# fmt: on
+    class TestApp(App):
+        def build(self):
+            return kv
 
-
-class TestApp(App):
-    def build(self):
-        return kv
-
-
-TestApp().run()
+    TestApp().run()
