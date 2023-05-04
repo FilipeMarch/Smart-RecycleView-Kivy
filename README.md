@@ -13,7 +13,12 @@ I created this `SmartRV` which is a RecycleView that implements a function `scro
 
 The usage is very simple, you just need to choose the orientation of the children ('horizontal' or 'vertical'), and set the height or width of the children.
 
-For example, if you want a vertical `SmartRV`, you need to say what is the height of its children:
+Save the file `smart_rv.py` on your project folder. Then import `SmartRV`:
+```python
+from smart_rv import SmartRV
+```
+
+Now, if you want a vertical `SmartRV`, you need to say what is the height of its children:
 ```yml
 SmartRV:
     id: rv
